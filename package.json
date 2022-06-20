@@ -1,0 +1,19 @@
+{
+  "name": "learning-ts-todo-list",
+  "version": "1.0.0",
+  "description": "Todo list using TypeScript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/owentr1369/learning-ts-todo-list.git"
+  },
+  "author": "TranTam",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/owentr1369/learning-ts-todo-list/issues"
+  },
+  "homepage": "https://github.com/owentr1369/learning-ts-todo-list#readme"
+}
