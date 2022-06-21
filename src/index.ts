@@ -13,7 +13,8 @@ const form =
   (document.getElementById('new-task-form') as HTMLFormElement) || null;
 const input = document.querySelector<HTMLInputElement>('#new-task-title');
 
-const tasks: Task[] = [];
+const tasks: Task[] = loadTasks();
+tasks.forEach(addListItem);
 
 form?.addEventListener('submit', (e) => {
   e.preventDefault();
@@ -27,9 +28,11 @@ form?.addEventListener('submit', (e) => {
   };
 
   tasks.push(newTask);
+  saveTasks();
 
   addListItem(newTask);
   input.value = '';
+
   console.log('tasks :>> ', tasks);
 });
 
@@ -40,7 +43,7 @@ function addListItem(task: Task) {
 
   checkbox.addEventListener('change', () => {
     task.completed = checkbox.checked;
-    saveTask();
+    saveTasks();
   });
 
   checkbox.type = 'checkbox';
@@ -49,6 +52,11 @@ function addListItem(task: Task) {
   item.append(lable);
   list?.append(item);
 }
-function saveTask() {
+function saveTasks() {
   localStorage.setItem('TASKS', JSON.stringify(tasks));
+}
+function loadTasks(): Task[] {
+  const taskJSON = localStorage.getItem('TASKS');
+  if (taskJSON == null) return [];
+  return JSON.parse(taskJSON);
 }
