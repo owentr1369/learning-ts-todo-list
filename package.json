@@ -4,7 +4,8 @@
   "description": "Todo list using TypeScript",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "tsc --watch"
   },
   "repository": {
     "type": "git",
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/owentr1369/learning-ts-todo-list/issues"
   },
-  "homepage": "https://github.com/owentr1369/learning-ts-todo-list#readme"
+  "homepage": "https://github.com/owentr1369/learning-ts-todo-list#readme",
+  "dependencies": {
+    "uuid": "^8.3.2"
+  }
 }
